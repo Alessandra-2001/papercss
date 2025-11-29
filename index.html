@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALIDOSCOPIO: La Aventura Gráfica</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/papercss@1.8.2/dist/paper.min.css">
+    
+    <style>
+
+        body {
+            background-color: #101010; 
+            color: white;
+            background-attachment: fixed; 
+        }
+        
+       
+        h2, h3, h4 { 
+            color: #4A90E2; 
+        }
+        
+     
+        .main-header {
+            position: sticky;
+            top: 0;
+            z-index: 1001;
+        }
+        
+      
+        .top-bar {
+            background-image: url('img/img0.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-color: #192841; 
+            color: white;
+            padding: 0.8rem 0;
+            text-align: center;
+        }
+        .top-bar-title {
+            font-size: 1.8em; 
+            margin: 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7); 
+        }
+
+        
+        .main-nav {
+            background-color: #5A3B8D;
+        }
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            text-align: center; 
+        }
+        .main-nav li {
+            display: inline-block;
+        }
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.3rem 1rem;
+            display: block;
+        }
+        .main-nav a:hover {
+            background-color: #4A90E2;
+        }
+        
+       
+        #inicio, #tematica, #produccion, #integrantes {
+            scroll-margin-top: 100px; 
+        }
+
+        
+        .article-card {
+            background-color: rgba(25, 40, 65, 0.9); 
+            border: 1px solid #5A3B8D; 
+            margin-bottom: 1.5rem;
+            padding: 1.5rem; 
+            color: white;
+        }
+        
+        
+        #inicio.article-card {
+            padding: 1.5rem; 
+            text-align: center; 
+        }
+        
+        
+        .iframe-container {
+            width: 640px;  
+            height: 480px; 
+            margin-left: auto;
+            margin-right: auto; 
+            margin-top: 1rem;
+            border: none; 
+            overflow: hidden; 
+        }
+        
+        
+    </style>
+</head>
+<body>
+
+    <header class="main-header"> 
+        <div class="top-bar">
+            <h1 class="top-bar-title">CALIDOSCOPIO: La Aventura Gráfica</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#tematica">Temática</a></li>
+                <li><a href="#produccion">Producción</a></li>
+                <li><a href="#integrantes">Integrantes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        
+        <div class="row">
+            
+            <section class="col-12">
+
+                <article id="inicio" class="article-card">
+                    
+                    <h2 style="margin-top:0;">Bienvenido a nuestra aventura gráfica por el espacio</h2>
+                    
+                    <p>Haz click en INCIAR para empezar la aventura</p>
+                    
+                    <div class="iframe-container">
+                        <iframe 
+                            src="p5/index.html" 
+                            style="width: 100%; height: 100%; border: none; display: block;"
+                            title="Aventura Gráfica Calidoscopio p5.js"
+                            allowfullscreen
+                            scrolling="no">
+                            Tu navegador no soporta iframes.
+                        </iframe>
+                    </div>
+
+                </article>
+                
+                <article id="tematica" class="article-card">
+                    <h3>Detalles de la Temática</h3>
+                    <p>Basado en el cuento "Calidoscopio" de Ray Bradbury, que narra las últimas reflexiones de un grupo de astronautas, que quedan a la deriva en el espacio tras la explosión de su nave. Para continuar la historia, el usuario debe tomar decisiones, habiendo distintos destinos dependiendo de la elección que haga.</p>
+                </article>
+
+                <article id="produccion" class="article-card">
+                    <h3>Producción</h3>
+                    <p>Primero, hicimos un diagrama de flujo para visualizar las pantallas de la aventura, luego creamos imágenes con IA para ilustrar el cuento con un toque de realismo y finalmente programamos en p5.js.</p>
+                </article>
+
+                <article id="integrantes" class="article-card">
+                    <h3>Integrantes</h3>
+                    <p>Alessandra Angiolillo y Nicole Condoleo, Comisión 1 - PMIW</p>
+                </article>
+
+            </section>
+
+            </div> </main>
+
+    <footer class="text-center">
+        <p>&copy; 2025 CALIDOSCOPIO.</p>
+    </footer>
+
+</body>
+</html>

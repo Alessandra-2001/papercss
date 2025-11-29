@@ -1,0 +1,267 @@
+:root {
+    --color-primario: #192841; 
+    --color-secundario: #5A3B8D; 
+    --color-acento: #4A90E2; 
+    --color-fondo-oscuro: #101010;
+    --color-texto-claro: #fff;
+    --color-texto-secundario: #aaa;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--color-texto-claro);
+    background-color: var(--color-fondo-oscuro); 
+    background-attachment: fixed; /* Mantenido para el caso de que body lleve imagen */
+    scroll-behavior: smooth; 
+    font-size: 16px; 
+}
+
+h2, h3, h4 { 
+    color: var(--color-acento); 
+}
+
+/* Nota: .grey-bg ya no se usa con el nuevo diseño de Paper CSS, pero se mantiene */
+.grey-bg {
+    background-color: rgba(25, 40, 65, 0.9);
+    padding: 20px; 
+}
+
+h1 { font-size: 1.8em; } 
+h2 { font-size: 1.6em; } 
+h3 { font-size: 1.4em; } 
+p, .quote { font-size: 1em; } 
+
+
+/* 💥 AJUSTE PARA EL ENCABEZADO FIJO */
+#inicio, #tematica, #produccion, #integrantes {
+    /* Reducido a 100px para el header más pequeño */
+    scroll-margin-top: 100px; 
+}
+
+.main-header {
+    position: sticky; 
+    top: 0;
+    z-index: 1001;
+    width: 100%;
+}
+
+/* 💥 IMAGEN DE FONDO Y AJUSTE DE TAMAÑO PARA EL BANNER SUPERIOR */
+.top-bar {
+    /* Usa la variable de color como respaldo */
+    background-color: var(--color-primario);
+    /* Fondo de imagen */
+    background-image: url('img/img0.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    color: var(--color-texto-claro);
+    padding: 0.8rem 0; /* AJUSTE DE TAMAÑO: Reducido */
+    text-align: center;
+    z-index: 1001; 
+}
+
+.top-bar-title {
+    margin: 0;
+    font-size: 1.8em; /* AJUSTE DE TAMAÑO: Coincide con el HTML */
+    font-weight: 900;
+    /* Sombreado para mejorar la legibilidad sobre la imagen */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); 
+}
+
+/* Navegación */
+.main-nav {
+    background-color: var(--color-secundario); 
+    padding: 0;
+    z-index: 1000;
+    box-shadow: none; 
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center; /* Centralizamos el menú ya que el layout es de una columna */
+    max-width: 100%; /* Usamos todo el ancho */
+    padding: 0;
+}
+
+.main-nav li {
+    display: inline-block; /* Cambiado a inline-block para que se centre bien */
+}
+
+.main-nav a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    padding: 0.3rem 1rem; /* AJUSTE DE TAMAÑO: Reducido */
+    display: block;
+    border-right: none; /* Quitamos el borde derecho */
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+    background-color: var(--color-acento); 
+}
+
+/* NOTA: Las siguientes clases (main-layout, content-body, sidebar) 
+   ya no se usan porque la estructura HTML ahora usa las clases 
+   'container' y 'row/col-12' de Paper CSS. Se mantienen si aún 
+   las usas en alguna parte del HTML.
+*/
+
+.main-layout {
+    display: flex; 
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 15px;
+    gap: 20px;
+}
+
+.content-body {
+    flex: 3; 
+    min-width: 0;
+}
+
+/* El sidebar ya no existe en el HTML actual, pero se mantiene la clase */
+.sidebar {
+    flex: 1; 
+    padding: 20px;
+    background-color: var(--color-primario);
+    box-shadow: none; 
+    height: fit-content; 
+    border: 1px solid var(--color-secundario); 
+}
+
+/* Card General (ahora article-card) */
+.content-body article {
+    background-color: rgba(25, 40, 65, 0.9); /* Fondo semi-transparente */
+    padding: 1.5rem; /* Ajustado al padding de Paper CSS */
+    margin-bottom: 1.5rem; /* Ajustado al margen de Paper CSS */
+    box-shadow: none; 
+    border: 1px solid var(--color-secundario); 
+}
+
+/* Alias de article-card para mayor compatibilidad */
+.article-card {
+    background-color: rgba(25, 40, 65, 0.9);
+    border: 1px solid var(--color-secundario); 
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    color: var(--color-texto-claro);
+}
+
+
+/* Estilo específico para la sección de inicio */
+#inicio.article-card {
+    padding: 1.5rem; 
+    text-align: center; 
+}
+
+
+/* 💥 Estilos para el iframe (640x480, centrado y sin scroll) */
+.iframe-container {
+    width: 640px;  /* Ancho fijo para el juego */
+    height: 480px; /* Altura fija para el juego */
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: 1rem;
+    
+    /* SIN BORDE Y SIN BARRAS DE DESPLAZAMIENTO */
+    border: none; 
+    overflow: hidden; 
+}
+
+
+/* Estilos sin cambios */
+
+.hero-article h2 {
+    margin-top: 0;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0; 
+    border: 3px solid var(--color-acento);
+}
+
+.cta-button {
+    background-color: var(--color-secundario); 
+    color: var(--color-texto-claro);
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.quote {
+    font-style: italic;
+    border-left: 3px solid var(--color-acento);
+    padding-left: 10px;
+    margin: 15px 0;
+    color: var(--color-texto-secundario);
+}
+
+.gallery-grid {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    gap: 30px; 
+}
+
+.gallery-grid figure {
+    margin: 0;
+    padding: 0;
+    width: 60%; 
+    max-width: 400px; 
+    text-align: center;
+}
+
+.gallery-grid figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    box-shadow: none; 
+    border: 1px solid var(--color-acento); 
+}
+
+.gallery-grid figcaption {
+    font-size: 0.9em;
+    color: var(--color-texto-secundario);
+    margin-top: 5px;
+}
+
+footer {
+    background-color: var(--color-fondo-oscuro);
+    color: var(--color-texto-secundario);
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.8em;
+}
+
+@media (max-width: 768px) {
+    .main-layout {
+        flex-direction: column; 
+        padding: 0 10px; 
+    }
+    
+    .content-body, .sidebar {
+        flex: none; 
+        width: 100%;
+    }
+    
+    .main-header {
+        position: static; 
+    }
+
+    .main-nav ul {
+        text-align: center;
+    }
+    
+    .gallery-grid figure {
+        width: 90%; 
+    }
+}
